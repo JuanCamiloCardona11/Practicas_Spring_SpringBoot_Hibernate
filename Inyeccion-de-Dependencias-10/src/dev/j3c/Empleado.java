@@ -5,4 +5,5 @@ public interface Empleado {
 	void iniciarLabores();
 	String describirActividades();
 	void registrarSalida();
+	Reporte getReporte();
 }

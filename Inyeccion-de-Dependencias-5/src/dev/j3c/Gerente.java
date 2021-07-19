@@ -1,25 +1,9 @@
 package dev.j3c;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component("miGerente")
 public class Gerente implements Empleado {
-
-	private Reporte reporte;
 	
 	public Gerente() {}
-	
-	@Autowired
-	public Gerente(Reporte reporte) {
-		System.out.println("Inyectando una referencia de la clase Reporte en el constructor...");
-		this.reporte = reporte;
-	}
-	
-	public Reporte getReporte() {
-		return reporte;
-	}
-	
+
 	@Override
 	public void registrarLlegada() {
 		// TODO Auto-generated method stub

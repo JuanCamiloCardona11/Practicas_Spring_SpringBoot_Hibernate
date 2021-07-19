@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class Gerente implements Empleado {
 
-	@Autowired
 	private Reporte reporte;
 	
 	public Gerente() {}
@@ -14,7 +13,13 @@ public class Gerente implements Empleado {
 	public Reporte getReporte() {
 		return reporte;
 	}
-
+	
+	@Autowired
+	public void setReporte(Reporte reporte) {
+		System.out.println("Inyectando una referencia de Reporte por medio de metodo setter...");
+		this.reporte = reporte;
+	}
+	
 	@Override
 	public void registrarLlegada() {
 		// TODO Auto-generated method stub

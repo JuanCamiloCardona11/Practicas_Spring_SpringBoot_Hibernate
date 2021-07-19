@@ -1,9 +1,20 @@
 package dev.j3c;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Secretario implements Empleado{
+
+	@Autowired
+	private Reporte reporte;
 	
 	public Secretario() {}
-		
+	
+	public Reporte getReporte() {
+		return reporte;
+	}
+	
 	@Override
 	public void registrarLlegada() {
 		// TODO Auto-generated method stub

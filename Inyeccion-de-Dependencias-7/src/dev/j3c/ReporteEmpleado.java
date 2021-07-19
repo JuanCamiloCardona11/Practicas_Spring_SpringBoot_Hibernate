@@ -2,7 +2,7 @@ package dev.j3c;
 
 import org.springframework.stereotype.Component;
 
-@Component("miReporte")
+@Component
 public class ReporteEmpleado implements Reporte {
 
 	@Override

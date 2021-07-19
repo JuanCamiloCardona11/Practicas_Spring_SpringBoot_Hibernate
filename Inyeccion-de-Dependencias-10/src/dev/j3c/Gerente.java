@@ -1,8 +1,19 @@
 package dev.j3c;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Gerente implements Empleado {
+
+	@Autowired
+	private Reporte reporte;
 	
 	public Gerente() {}
+	
+	public Reporte getReporte() {
+		return reporte;
+	}
 
 	@Override
 	public void registrarLlegada() {

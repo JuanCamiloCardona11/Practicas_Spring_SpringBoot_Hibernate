@@ -6,7 +6,7 @@ public class Prueba {
 	public static void main(String[] args) {
 	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	
-	Empleado empleado = context.getBean("miGerente", Empleado.class);
+	Empleado empleado = context.getBean("gerente", Empleado.class);
 	
 	System.out.println(empleado.describirActividades());
 	System.out.println(empleado.getReporte().getTitulo());

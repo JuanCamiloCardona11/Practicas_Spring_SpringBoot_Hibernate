@@ -6,13 +6,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class Contador implements Empleado {
 
-	@Autowired
 	private Reporte reporte;
 	
 	public Contador() {}
 	
 	public Reporte getReporte() {
 		return reporte;
+	}
+
+	@Autowired
+	public void setReporte(Reporte reporte) {
+		//System.out.println("Inyectando una referencia de Reporte por medio de metodo setter...");
+		this.reporte = reporte;
 	}
 
 	@Override

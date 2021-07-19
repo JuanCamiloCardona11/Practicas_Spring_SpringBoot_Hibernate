@@ -11,6 +11,7 @@ public class Prueba {
 	System.out.println(empleado.describirActividades());
 	System.out.println(empleado.getReporte().getTitulo());
 	System.out.println(empleado.getReporte().getDescripcion());
+	
 	context.close();
 	
 	}

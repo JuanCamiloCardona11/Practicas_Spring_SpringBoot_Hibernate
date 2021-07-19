@@ -3,7 +3,7 @@ package dev.j3c;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("miContador")
 public class Contador implements Empleado {
 
 	private Reporte reporte;

@@ -6,10 +6,13 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-
-	<context:component-scan base-package="dev.j3c"/>
-
+	
     <!-- Define your beans here -->
+   	<bean 
+   		id="miEmpleado" 
+   		class="dev.j3c.Secretario"
+   		scope="prototype">
+    </bean>
     
 </beans>
 

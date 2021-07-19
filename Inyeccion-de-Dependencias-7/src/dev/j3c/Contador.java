@@ -3,20 +3,24 @@ package dev.j3c;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("miContador")
+@Component
 public class Contador implements Empleado {
 
 	private Reporte reporte;
 	
 	public Contador() {}
 	
+	@Autowired
+	public Contador(Reporte reporte) {
+		//System.out.println("Inyectando una referencia de la clase Reporte en el constructor...");
+		this.reporte = reporte;
+	}
+	
 	public Reporte getReporte() {
 		return reporte;
 	}
 
-	@Autowired
 	public void setReporte(Reporte reporte) {
-		//System.out.println("Inyectando referencia de Reporte por medio de metodo setter");
 		this.reporte = reporte;
 	}
 
