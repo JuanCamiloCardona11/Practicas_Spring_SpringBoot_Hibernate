@@ -21,7 +21,7 @@ public class Prueba {
 		
 		try {
 			sesion.beginTransaction();
-			sesion.createQuery("update Estudiante set email='email-invalido@gmail.com'").executeUpdate();
+			sesion.createQuery("update Estudiante set email='email-invalido@gmail.com'");
 			sesion.getTransaction().commit();
 			
 		} catch (Exception e) {
