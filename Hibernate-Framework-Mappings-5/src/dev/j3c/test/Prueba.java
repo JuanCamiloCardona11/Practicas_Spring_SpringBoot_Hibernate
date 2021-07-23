@@ -19,15 +19,20 @@ public class Prueba {
 			sesion.beginTransaction();
 			
 			int idDetalle = 2;
-			//Obtenemos el detalle del profesor con id=2 
-			DetalleProfesor detalleProfesor = sesion.get(DetalleProfesor.class, idDetalle);
 			
-			//Debido a que en ambas entidades se aplica cascade delete no tenemos que eliminar
-			//la referencia de Profesor(Entidad dependiente) a DetalleProfesor(Entidad Independiente), por lo cual se puede hacer la 
-			//eliminacion de ambos registros tranquilamente.
-
+			//Obtenemos el detalle del profesor con id=2
+			DetalleProfesor detalleProfesor = sesion.get(DetalleProfesor.class, idDetalle);			
+			
 			//Eliminamos el detalle -> Tambien eliminara el profesor correspondiente (Cascade Delete)
 			if(detalleProfesor != null) {
+				//Eliminamos la referencia al objeto asociado (Se rompe el enlace bidireccional)
+				//Debemos de tener en cuenta si estamos eliminando un registro en la tabla dependiente
+				//o independiente, si el registro es en la tabla independiente, la tabla dependiente
+				//quedara con una llave foranea inexistente (ERROR), por lo cual primero debemos de
+				//llevar a null la llave foranea en la tabla independiente, debido a que Hibernate
+				//no lo hace por nosotros 
+				detalleProfesor.getProfesor().setDetalleInstructor(null);  
+				//Y podemos eliminar el registro sin ningun problema
 				sesion.delete(detalleProfesor);
 				System.out.println("Se ha eliminado el detalle y su respectivo profesor");
 			} else {
