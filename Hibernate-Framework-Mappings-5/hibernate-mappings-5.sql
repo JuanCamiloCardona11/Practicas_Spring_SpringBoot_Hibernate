@@ -16,26 +16,8 @@ CREATE TABLE profesor (
 	email VARCHAR(100) DEFAULT NULL,
 	detalle_profesor_id INT DEFAULT NULL,
 	PRIMARY KEY (id),
-	
-    CONSTRAINT fk_detalle_profesor 
-    FOREIGN KEY (detalle_profesor_id) 
-    REFERENCES detalle_profesor (id) 
-    ON DELETE NO ACTION 
-    ON UPDATE NO ACTION
-);
-
-CREATE TABLE curso (
-	id INT NOT NULL AUTO_INCREMENT,
-	titulo VARCHAR(100) DEFAULT NULL,
-	descripcion VARCHAR(200) DEFAULT NULL,
-    profesor_id INT DEFAULT NULL,
-	PRIMARY KEY (id),
-	
-	CONSTRAINT fk_profesor 
-	FOREIGN KEY (profesor_id) 
-	REFERENCES profesor (id)   
-	ON DELETE NO ACTION 
-    ON UPDATE NO ACTION
+    KEY fk_detalle_profesor (detalle_profesor_id),
+	CONSTRAINT fk_detalle_profesor FOREIGN KEY (detalle_profesor_id) REFERENCES detalle_profesor (id)
 );
 
 INSERT INTO detalle_profesor (id, canal_youtube, pasatiempo) VALUES 
@@ -47,5 +29,3 @@ INSERT INTO profesor (id, nombre, apellido, email, detalle_profesor_id) VALUES
 	('1','Armando','Marin','armando.mar235@j3c.dev','1'),
 	('2','Pedro','Cardona','pedro.cardo1@j3c.dev','2'),
 	('3','Juan','Grisales','juan-grisales333@j3c.dev','3');
-    
-    
