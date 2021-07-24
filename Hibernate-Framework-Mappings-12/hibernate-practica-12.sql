@@ -65,7 +65,6 @@ INSERT INTO curso (id,titulo,descripcion,profesor_id) VALUES
 	('1','Spring & Hibernate','En este curso aprenderas todos los conceptos de Spring y Hibernate','1'),
 	('2','The MEAN Stack','En este curso aprenderas todos los conceptos de Mongo DB, Express, Angular y Node JS','1'),
 	('3','The MEAN Stack','En este curso aprenderas todos los conceptos de Mongo DB, Express, Angular y Node JS','2');
-
 INSERT INTO revision_curso (id,comentario,curso_id) VALUES 
 	('1','El curso estuvo genial, me ayudo mucho a entender muchos conceptos','3'),
 	('2','El curso esta muy bien elaborado, contiene mucho contenido util','2'),
